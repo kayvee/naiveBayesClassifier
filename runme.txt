@@ -1,0 +1,1 @@
+$ cat /home/ling165/lab1/spam_assassin.train | python nbc.py 
