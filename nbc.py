@@ -16,12 +16,12 @@ def update_counts(label, bow, label_freq, spam_freq, ham_freq):
     # if spam, update spam_freq
     if label == '1':
         for word in bow:
-            spam_freq[word] = spam_freq.get(word, 2.0) + 1
+            spam_freq[word] = spam_freq.get(word, 1.0) + 1
 
     # if ham, update ham_freq
     elif label == '0':
         for word in bow:
-            ham_freq[word] = ham_freq.get(word, 2.0) + 1
+            ham_freq[word] = ham_freq.get(word, 1.0) + 1
 
     return label_freq, spam_freq, ham_freq
 
@@ -91,4 +91,4 @@ if __name__ == '__main__':
     recall = trueSpams / actualSpams
                                         #Goals
     print "Precision:", precision       #71%
-    print "Recall:", recall             #90%
+    print "Recall:", recall             #93%
